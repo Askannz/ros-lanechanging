@@ -1,0 +1,32 @@
+<launch>
+    <param name="use_sim_time" value="true"/>
+    
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find autocar)/maps/world/highway.yaml">
+        <param name="frame_id" value="/map" />
+    </node>
+    
+    <node name="stageros" pkg="stage_ros" type="stageros" args="-g $(find autocar)/maps/world/project_test.world" respawn="false" output="screen">
+        <param name="base_watchdog_timeout" value="0.2"/>
+    </node>
+    
+    <node name="fake_localization_0" pkg="fake_localization" type="fake_localization" respawn="false" ns="/robot_0">
+        <param name="odom_frame_id" value="/robot_0/odom"/>
+        <param name="base_frame_id" value="/robot_0/base_link"/>
+    </node>
+    
+    <node name="fake_localization_1" pkg="fake_localization" type="fake_localization" respawn="false" ns="/robot_1">
+        <param name="odom_frame_id" value="/robot_1/odom"/>
+        <param name="base_frame_id" value="/robot_1/base_link"/>
+    </node>
+    
+    <group ns="robot_0">
+        <param name="robot_description" textfile="$(find autocar)/urdf/golfcar_urdf_red.xml" />
+        <param name="tf_prefix" value="robot_0" />
+    </group>
+    
+    <group ns="robot_1">
+        <param name="robot_description" textfile="$(find autocar)/urdf/golfcar_urdf_green.xml" />
+        <param name="tf_prefix" value="robot_1" />
+    </group>
+
+</launch>

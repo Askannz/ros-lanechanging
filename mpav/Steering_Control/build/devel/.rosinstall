@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/user/cs6244_motionplanning/mpav/Steering_Control/build/devel/setup.sh

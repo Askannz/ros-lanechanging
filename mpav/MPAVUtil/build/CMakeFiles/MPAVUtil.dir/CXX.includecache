@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/MPAVUtil/Filter.hpp
+
+../include/MPAVUtil/Range.hpp
+stdlib.h
+-
+math.h
+-
+assert.h
+-
+
+/home/user/cs6244_motionplanning/mpav/MPAVUtil/src/Filter.cpp
+MPAVUtil/Filter.hpp
+-
+
+/home/user/cs6244_motionplanning/mpav/MPAVUtil/src/Range.cpp
+MPAVUtil/Range.hpp
+-
+
