@@ -9,5 +9,6 @@ velocity_bounds [-10000 10000 -1 1 -1 1 -90 90 ]
 acceleration_bounds [-10000 10000 -1 1 -1 1 -90 90]
 )
 
-gc( pose [180 18.5 0.0 180] name "gc1" color "red")
-gc( pose [180 15.5 0.0 180] name "gc2" color "green")
+gc( pose [10.0 24.5 0.0 0.0] name "car0" color "red")
+gc( pose [20.0 24.5 0.0 0.0] name "car1" color "green")
+gc( pose [11.0 21.5 0.0 0.0] name "car2" color "green")
